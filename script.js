@@ -1,5 +1,5 @@
-//get random number between 0 and 2
-function getComputerChoice(){
+//get random number's between 0 and 2
+ function getComputerChoice(){
     Choices = ["rock","paper","scissors"]
     return Choices[Math.floor(Math.random() * 3)]
 }
@@ -20,24 +20,31 @@ function playRound(playerSelection, computerSelection){
         console.log("Please enter a correct input")
     }
     
-}
+} 
 
-//play five times 
-function game(){
-    for(let i = 0 ; i >5; i++){
-        const player = "rock"
+ // get the user and computer input and manage the score
+ function game(){
+        const player = prompt("enter the choice : ")
         let computer = getComputerChoice()
+        console.log("player choice : " + player)    
+        console.log("computer choice : " + computer)
         playRound(player,computer)
-    }
     //score
     if(score1 > score2){
         console.log("The winner is the computer with a score of " + score1 + " over " + score2)
     }else if(score2 > score1){
         console.log("The winner is the player with a score of " + score2 + " over " + score1)
     }else{
-        console.log("it's a draw, no winner")
+        console.log("it's a draw, no winner " + score1 + " and " + score2)
     }
+} 
+
+
+//play five times
+for(let i = 0; i < 5; i++){
+    console.log("round " + (i+1))
+    game()
 }
-//console.log(player)
-//console.log(computer)
-game()
+
+
+
